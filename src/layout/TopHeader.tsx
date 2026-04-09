@@ -1,4 +1,5 @@
 import React from "react";
+import Profile from "./ProfilePopover";
 
 // Search;
 
@@ -20,7 +21,8 @@ const TopHeader = () => {
             <Bell />
           </div>
           <div className="profile">
-            <User />
+            <Profile />
+            {/* <User /> */}
           </div>
         </div>
       </div>

@@ -1,5 +1,9 @@
-import { useState } from "react";
-import useAuthStore from "../store/authStore";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// import useAuthStore from "../store/authStore";
+
+import auth from "../auth/Authorize";
 
 const initialForm = {
   username: "",
@@ -15,14 +19,15 @@ const userData = {
 
 const LoginPage = () => {
   const [form, setForm] = useState(initialForm);
-  const login = useAuthStore((state) => state.login);
+  const navigate = useNavigate();
+  //   const login = useAuthStore((state) => state.login);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-
-    login(userData);
-
-    console.log(form);
+    const res = auth.login(form, userData);
+    if (res) {
+      navigate("/dashboard");
+    }
   };
   return (
     <div className="min-h-screen flex bg-white">
