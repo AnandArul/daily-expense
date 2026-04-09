@@ -1,0 +1,126 @@
+.menu-icon {
+  padding: 5px;
+  border: 1px solid #835382;
+  border-radius: 5px;
+  background-color: #8d5f8c;
+}
+
+/* input {
+  padding: 5px;
+  border: 1px solid #a376a2;
+  background-color: #8d5f8c;
+  color: #f6cbf5;
+  width: 100%;
+  font-size: 12pt;
+
+  &:focus {
+    outline: none;
+    border-color: #b389b2;
+    box-shadow: 0 0 5px rgba(163, 118, 162, 0.5);
+  }
+} */
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #8d5f8c;
+  color: #ddc3c3;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #a376a2;
+
+  background-color: #8d5f8c;
+  color: #f6cbf5;
+  border-radius: 5px;
+  padding: 0 12px;
+  height: 40px;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+  /* width: 280px; */
+  width: 100%;
+  font-weight: 600;
+}
+
+/* The Search icon from lucide-react */
+/* .search-box svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: #9ca3af;
+  transition: color 0.15s;
+} */
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  /* color: #111827; */
+  min-width: 0; /* prevents overflow in flex */
+}
+
+/* .search-box input::placeholder {
+  color: #9ca3af;
+} */
+
+/* Hover state */
+/* .search-box:hover {
+  border-color: #c0c0c0;
+} */
+
+/* Focus state — triggered when input inside is focused */
+/* .search-box:focus-within {
+  border-color: #a0a0a0;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); 
+}
+
+.search-box:focus-within svg {
+  color: #6b7280;
+} */
+
+.dashboard {
+  border: 1px solid #a376a2;
+  height: calc(100vh - 100px);
+  border-radius: 5px;
+  padding: 16px;
+  color: #f6cbf5;
+
+  h2 {
+    color: #ddc3c3;
+  }
+}
+
+.expenses-list {
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.add-expense-button {
+  padding: 10px 16px;
+  background-color: #6b3f69;
+  border: 1px solid #6b3f69;
+  color: #ddc3c3;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.15s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #5b2f59;
+    border-shadow: 0 0 5px rgba(107, 63, 105, 0.5);
+  }
+}

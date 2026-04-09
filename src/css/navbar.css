@@ -1,0 +1,19 @@
+.menu {
+  /* background-color: #8d5f8c;
+  color: #fff; */
+  padding: 10px;
+  border-radius: 5px;
+}
+.menu-item {
+  font-size: 12pt;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+
+  &:hover,
+  &.active {
+    background-color: #835382;
+  }
+}
