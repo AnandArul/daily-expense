@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import { User, Power, Bolt, UserCog } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
+import auth from "../auth/Authorize";
+
 const Profile = () => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
@@ -16,6 +20,13 @@ const Profile = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const logout = () => {
+    // const navigate = useNavigate();
+    auth.logout();
+    setOpen(false);
+    // navigate("/logout");
+  };
 
   return (
     <div className="relative inline-block" ref={ref}>
@@ -40,7 +51,10 @@ const Profile = () => {
             <button className="block w-full text-left px-2 py-1 text-[#6b3f69] hover:bg-gray-100 rounded cursor-pointer text-sm flex items-center">
               <Bolt className="h-[18px] w-[18px] mr-2" /> Settings
             </button>
-            <button className="block w-full text-left px-2 py-1  hover:bg-gray-100 rounded cursor-pointer text-[#6b3f69] flex items-center text-sm">
+            <button
+              onClick={logout}
+              className="block w-full text-left px-2 py-1  hover:bg-gray-100 rounded cursor-pointer text-[#6b3f69] flex items-center text-sm"
+            >
               <Power className="h-[18px] w-[18px] mr-2 text-red-500 " /> Logout
             </button>
           </div>

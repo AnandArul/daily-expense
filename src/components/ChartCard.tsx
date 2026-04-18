@@ -1,11 +1,14 @@
 import React from "react";
+import BarChart from "./charts/BarChart";
 
 const ChartCard = () => {
   return (
     <>
-      <div className="bg-[#A376A2] shadow-sm rounded p-2">
+      <div className="shadow-sm rounded p-2">
         <h2 className="m-0">Chart</h2>
-        <div className="chart-placeholder h-24 mt-1 rounded"></div>
+        <div className="chart-placeholder h-50 mt-1 rounded">
+          <BarChart />
+        </div>
         {/* <div className="chart-placeholder h-48 bg-gray-200 mt-1 rounded"></div> */}
       </div>
     </>

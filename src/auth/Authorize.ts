@@ -33,6 +33,7 @@ const login: AuthMethods["login"] = (
   // const setUser = useAuthStore((state) => state.userDetails);
 };
 const logout: AuthMethods["logout"] = () => {
+  console.log("Auth Logout");
   setLogout();
 };
 

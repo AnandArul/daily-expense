@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-// import useAuthStore from "../store/authStore";
-
 import auth from "../auth/Authorize";
 
 const initialForm = {
@@ -20,7 +18,6 @@ const userData = {
 const LoginPage = () => {
   const [form, setForm] = useState(initialForm);
   const navigate = useNavigate();
-  //   const login = useAuthStore((state) => state.login);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();

@@ -12,7 +12,6 @@ const AppRoutes = () => {
   return (
     <>
       <Routes>
-        {/* <Route path=""></Route> */}
         <Route path="/login" element={<Login />} />
         <Route element={<App />}>
           <Route path="/" element={<Dashboard />} />

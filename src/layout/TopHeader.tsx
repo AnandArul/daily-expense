@@ -3,7 +3,7 @@ import Profile from "./ProfilePopover";
 
 // Search;
 
-import { Search, User, Bell } from "lucide-react";
+import { Search, Bell } from "lucide-react";
 
 const TopHeader = () => {
   return (
@@ -16,13 +16,11 @@ const TopHeader = () => {
           </div>
         </div>
         <div className="grow-3 text-white p-2  flex items-center justify-end">
-          {/* bg-[#8D5F8C] */}
           <div className="mr-2 text-[#DDC3C3]">
             <Bell />
           </div>
           <div className="profile">
             <Profile />
-            {/* <User /> */}
           </div>
         </div>
       </div>

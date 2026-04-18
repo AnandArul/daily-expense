@@ -18,7 +18,7 @@ const LeftsideMenu = () => {
   return (
     <>
       <aside className="w-64 p-4 border-e border-[#8D5F8C]">
-        <h2 className="text-lg font-bold mb-6">MyApp</h2>
+        <h2 className="text-lg font-bold mb-2 text-[#f7d2f7]">MyApp</h2>
         <nav className="space-y-2 mt-4 text-[#DDC3C3]">
           {menuItems.map((menu) => (
             <NavLink
