@@ -59,7 +59,7 @@ const Expenses = () => {
                   {txn.category}
                 </td>
                 <td className="px-3 py-3 flex-1 self-center text-xs">
-                  {txn.type === "income" ? (
+                  {txn.type === "Income" ? (
                     <span className="rounded-lg px-3 py-1 bg-[#3f6b41] text-white whitespace-nowrap">
                       Income
                     </span>

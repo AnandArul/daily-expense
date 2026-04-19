@@ -12,7 +12,7 @@ export default function App() {
             <TopHeader />
           </div>
 
-          <div className="flex-1 mt-4">
+          <div className="flex-1 mt-4 h-screen">
             <Outlet />
           </div>
         </main>

@@ -12,15 +12,16 @@ const hover: object = {
 };
 
 const layout: object = {
-  padding: {
-    top: 10,
-    bottom: 10,
-    left: 10,
-    right: 10,
-  },
+  padding: 0,
+  // padding: {
+  //   top: 10,
+  //   bottom: 10,
+  //   left: 10,
+  //   right: 10,
+  // },
 };
 const legend: object = {
-  display: true,
+  display: false,
   position: "right" as const, // "top" | "bottom" | "left" | "right"
   align: "center" as const, // "start" | "center" | "end"
   reverse: false, // reverse order of legend items
@@ -40,7 +41,7 @@ const legend: object = {
 };
 
 const title: object = {
-  // display: true,
+  display: false,
   // text: "TRANSACTIONS BY CATEGORY",
   // color,
   align: "center" as const, // "start" | "center" | "end"
@@ -94,6 +95,10 @@ export const getBarChartOptions = (color: string) => ({
     title: {
       display: false,
     },
+    tooltip: {
+      ...tooltip,
+      position: "nearest",
+    },
   },
   scales: {
     x: { ticks: { color }, grid: { display: false }, tooltip: { color } },
@@ -125,6 +130,7 @@ export const getPieChartOptions = (color: string) => ({
       labels: {
         ...legend.labels,
         color,
+        padding: 10,
       },
     },
 
@@ -132,12 +138,12 @@ export const getPieChartOptions = (color: string) => ({
     title: {
       ...title,
       color,
-      text: "TRANSACTIONS BY TYPE",
     },
 
     // ✅ Tooltip
     tooltip: {
       ...tooltip,
+      position: "nearest",
       callbacks: {
         title: (context: any) => context[0].label, // tooltip title
         label: (context: any) => {
@@ -151,6 +157,59 @@ export const getPieChartOptions = (color: string) => ({
         },
       },
     },
+  },
+});
+
+export const getLineChartOptions = (color: string) => ({
+  responsive: true,
+  maintainAspectRatio: false,
+
+  // hoverRadius: 12,
+  // hoverBackgroundColor: "green",
+  interaction: {
+    mode: "nearest",
+    intersect: false,
+    axis: "x",
+  },
+
+  plugins: {
+    // ✅ Legend
+    legend: {
+      ...legend,
+      labels: {
+        ...legend.labels,
+        color,
+        padding: 10,
+      },
+    },
+
+    // ✅ Title
+    title: {
+      ...title,
+      color,
+    },
+
+    // ✅ Tooltip
+    tooltip: {
+      ...tooltip,
+      position: "nearest",
+      // callbacks: {
+      //   title: (context: any) => context[0].label, // tooltip title
+      //   label: (context: any) => {
+      //     const value = context.parsed;
+      //     const total = context.dataset.data.reduce(
+      //       (a: number, b: number) => a + b,
+      //       0,
+      //     );
+      //     const percentage = ((value / total) * 100).toFixed(1);
+      //     return ` ${context.label}: ${value} (${percentage}%)`;
+      //   },
+      // },
+    },
+  },
+  scales: {
+    x: { ticks: { color }, grid: { display: false }, tooltip: { color } },
+    y: { ticks: { color }, grid: { display: false }, tooltip: { color } },
   },
 });
 

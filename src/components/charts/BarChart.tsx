@@ -10,11 +10,7 @@ interface BarChartProps {
 }
 
 const BarChart: React.FC<BarChartProps> = (props) => {
-  const {
-    labels = ["income", "expense"],
-    values = [250000, 120000],
-    // title = "Transacrtions",
-  } = props;
+  const { labels = ["income", "expense"], values = [250000, 120000] } = props;
   const data = {
     labels: labels,
     datasets: [
