@@ -1,28 +1,70 @@
 import { Line } from "react-chartjs-2";
-
-import { backgroundColor, borderColor } from "../../chartUtils/chartColors";
+import { useMemo } from "react";
 
 import { getLineChartOptions } from "../../chartUtils/chartOptions";
 const options = getLineChartOptions("#fff");
 
+import transactions from "../../assets/transactions";
+
 const LineChart = () => {
+  const { chartLabels, chartValues } = useMemo(() => {
+    const monthLabels = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    // Filter expenses and group by month
+    const monthlyTotals = transactions
+      .filter((t) => t.type === "Expense")
+      .reduce((acc: Record<number, number>, t) => {
+        const month = new Date(t.date).getMonth(); // 0–11
+        acc[month] = (acc[month] ?? 0) + t.amount;
+        return acc;
+      }, {});
+
+    const months: string[] = [];
+    const values: number[] = [];
+
+    monthLabels.forEach((label, index) => {
+      if (monthlyTotals[index] !== undefined) {
+        months.push(label);
+        values.push(monthlyTotals[index]);
+      }
+    });
+
+    return {
+      chartLabels: months,
+      chartValues: values,
+    };
+  }, []);
+
   const data = {
-    labels: ["Jan", "Feb", "Mar", "Apr"],
+    labels: chartLabels,
     datasets: [
       {
         label: "Month",
-        data: [65, 59, 80, 81],
+        data: chartValues,
         fill: true,
-        borderColor: backgroundColor,
+        borderColor: "#ffa0dc",
         tension: 0.1,
       },
-      {
-        label: "Month",
-        data: [45, 74, 54, 48],
-        fill: true,
-        borderColor: backgroundColor,
-        tension: 0.1,
-      },
+      //   {
+      //     label: "Month",
+      //     data: [45, 74, 54, 48],
+      //     fill: true,
+      //     borderColor: backgroundColor,
+      //     tension: 0.1,
+      //   },
     ],
   };
   return <Line data={data} options={options} />;

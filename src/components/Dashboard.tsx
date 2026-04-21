@@ -8,13 +8,15 @@ import transactions from "../assets/transactions";
 const Dashboard = () => {
   const { chartLabels, chartValues } = useMemo(() => {
     // Group by type and sum amounts
-    const grouped: Record<string, number> = transactions.reduce(
-      (acc, item) => {
-        acc[item.category] = (acc[item.category] || 0) + item.amount;
-        return acc;
-      },
-      {} as Record<string, number>,
-    );
+    const grouped: Record<string, number> = transactions
+      .filter((t) => t.type === "Expense")
+      .reduce(
+        (acc, item) => {
+          acc[item.category] = (acc[item.category] || 0) + item.amount;
+          return acc;
+        },
+        {} as Record<string, number>,
+      );
 
     // Extract unique types and totals (sorted order)
     const types = Object.keys(grouped).sort();
@@ -75,7 +77,7 @@ const Dashboard = () => {
           {/* PIE CHART */}
           <div className="flex flex-col min-h-0 border rounded border-[#a376a2]">
             <div className="h-10 shrink-0 flex items-center px-4 border-b border-[#a376a2] text-[#ddc3c3] font-semibold">
-              Expense Distribution
+              Income vs Expense
             </div>
             <div className="flex-1 px-4 pb-4 pt-2 flex items-center justify-center min-h-0 overflow-hidden">
               <div className="w-full h-full relative">
@@ -87,7 +89,7 @@ const Dashboard = () => {
           {/* BAR CHART */}
           <div className="flex flex-col min-h-0 border rounded border-[#a376a2]">
             <div className="h-10 shrink-0 flex items-center px-4 border-b border-[#a376a2] text-[#ddc3c3] font-semibold">
-              Monthly Overview
+              Category wise Expenses
             </div>
             <div className="flex-1 px-4 pb-4 pt-2 flex items-center justify-center min-h-0 overflow-hidden">
               <div className="w-full h-full">
@@ -99,7 +101,7 @@ const Dashboard = () => {
           {/* ANALYTICS */}
           <div className="col-span-2 flex flex-col min-h-0 border rounded border-[#a376a2] overflow-hidden">
             <div className="h-10 shrink-0 flex items-center px-4 border-b border-[#a376a2] text-[#ddc3c3] font-semibold">
-              Analytics
+              Monthly Expenses overview
             </div>
             <div className="flex-1 p-4 min-h-0 overflow-auto">
               <LineChart />

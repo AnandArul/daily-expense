@@ -232,7 +232,7 @@ const transactions = [
   {
     id: 24,
     title: "Haircut",
-    amount: 250,
+    amount: 1250,
     type: "Expense",
     category: "Personal Care",
     date: "2026-02-05",
@@ -992,7 +992,7 @@ const transactions = [
   {
     id: 100,
     title: "Charity Donation",
-    amount: 500,
+    amount: 1500,
     type: "Expense",
     category: "Other",
     date: "2026-04-18",

@@ -10,7 +10,7 @@ const Expenses = () => {
     <>
       <div className="shadow-sm border border-[#a376a2] rounded">
         <div className="flex items-center justify-between pl-3 pr-4 py-2">
-          <h2 className="m-0 text-[#a376a2]">Expenses</h2>
+          <h2 className="m-0 text-[#ddc3c3]">Expenses</h2>
           <div className="flex gap-3">
             <span className="text-white/50 cursor-pointer p-2 border rounded-lg flex items-center ">
               <ListFilter className="h-[18px]" />
