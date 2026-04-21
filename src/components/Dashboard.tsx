@@ -36,7 +36,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="p-4 h-full flex flex-col">
+      <div className="h-full flex flex-col">
         <h2 className="text-2xl font-bold mb-4 text-[#ddc3c3] shrink-0">
           Hello Arul!
         </h2>
