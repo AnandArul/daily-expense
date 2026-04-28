@@ -49,20 +49,20 @@ const Reports = () => {
         {reports.map((item, key) => (
           <div
             key={key}
-            className="bg-white shadow-md rounded-md p-3 hover:shadow-lg transition cursor-pointer"
+            className="bg-[#fff2ff]/5 text-[#f7d2f7] border border-[#a376a2]/80 rounded-md p-3 hover:shadow-xl transition cursor-pointer"
           >
             <h4 className="text-lg font-semibold mb-1 text-sm">{item.name}</h4>
-            <p className="text-gray-600 text-sm text-[12px]">
+            <p className="text-sm text-[12px] text-[#f7d2f7]/60">
               {item.description}
             </p>
             <div className="py-2">
               <hr className="border-[#a376a2]/50" />
             </div>
-            <div className="mb-2">
+            <div>
               {item.formats.map((f, k) => (
                 <span
                   key={k}
-                  className="border mr-1 px-3 py-1 text-[10px] rounded-4xl"
+                  className="border border-[#a376a2]/50 mr-1 px-3 py-1 text-[10px] rounded-4xl text-[#f7d2f7]/60"
                 >
                   {f}
                 </span>

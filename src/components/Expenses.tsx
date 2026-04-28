@@ -18,12 +18,6 @@ const Expenses = () => {
             <span className="text-white/50 cursor-pointer p-2 border rounded-lg flex items-center">
               <CirclePlus className="h-[18px]" />
             </span>
-            {/* <button className="flex items-center gap-1 add-expense-button px-4 py-1 bg-[#A376A2]">
-              <CirclePlus /> Filter
-            </button>
-            <button className="flex items-center gap-1 add-expense-button px-4 py-1 bg-[#f7d2f7]">
-              <CirclePlus /> Add
-            </button> */}
           </div>
         </div>
         {/* <div className="rounded-lg overflow-hidden border border-gray-200/10 mx-4 mb-4"> */}

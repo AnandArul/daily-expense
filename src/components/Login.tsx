@@ -80,7 +80,14 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-      <div className="w-[50%] border rounded-l-lg border-[#6b3f69] bg-[#6b3f69] p-4 flex items-center justify-center">
+      <div className="flex flex-col w-[50%] border rounded-l-lg border-[#6b3f69] bg-[#6b3f69] text-[#f7d2f7] p-4 items-center justify-center align-middle">
+        <h1>Daily Expense</h1>
+        <p>
+          Daily Expense App is a simple yet powerful tool for tracking your
+          everyday spending. View summaries through interactive charts showing
+          income vs expenses, category breakdowns, and spending trends over
+          time.
+        </p>
         {/* <div className="h-[600px] w-[400px] p-3 rounded bg-[#835382]"> */}
         {/* Login component */}
         {/* </div> */}
